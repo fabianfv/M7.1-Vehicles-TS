@@ -1,16 +1,20 @@
 {
-  "name": "M7.1-Vehicles-TS",
+  "name": "VehiclesTS",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node_modules/.bin/tsc ./models/wheel.ts ./models/car.ts ./controllers/controller.ts -w"
+    "build": "node_modules/.bin/tsc ./models/wheel.ts ./models/car.ts ./controllers/controller.ts"
   },
   "keywords": [],
   "author": "Fabián Flores Vadell",
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0"
   }
 }

@@ -4,7 +4,7 @@ class Wheel{
 
     constructor(diameter:number, brand:string){
         this.diameter=diameter;
-        this.brand=brand;
+        this.brand = brand;
     }
 
 }

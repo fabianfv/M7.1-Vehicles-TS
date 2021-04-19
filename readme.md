@@ -4,19 +4,28 @@
 * [Setup](#setup)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project is a simple Typescript practice.
+
+[Click here to see this page online](https://fabianfv.github.io/Vehicles-TS/)
 	
 ## Technologies
-Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+Project was created with:
+* Node version: 14.16.0
+* NPM version: 6.14.9
+* tsc version: 4.2.3
 	
 ## Setup
-To run this project, install it locally using npm:
-
+You can get this project from GitHub:
 ```
-$ cd ../lorem
+$ git clone https://github.com/fabianfv/Vehicles-TS.git
+```
+
+You can restore the development environment by doing:
+```
+$ cd Vehicles-TS/
 $ npm install
-$ npm start
+``` 
+You can transpile TS code to JS code by doing:
+``` 
+$ npm run build
 ``` 

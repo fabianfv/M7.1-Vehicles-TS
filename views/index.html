@@ -1,9 +1,72 @@
-<head>
-<script src="../models/car.js"></script>
-<script src="../models/wheel.js"></script>
-<script src="../controllers/controller.js"></script>
-</head>
-<body>
-    <p id="carInfo"></p>
-    <button onclick="createCar('1212SDS','SEAT','ROJO')">Create car</button>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <title>Typescript Practice: Vehicles</title>
+  </head>
+  <body>
+    <div class="container p-5 bg-light">
+      <h1 class="text-center mb-5">Vehicles Exercise</h1>
+
+      <div class="row">
+    
+        <!-- Form NEW CAR -->
+        <form id="formNewCar" class="col-12 needs-validation" novalidate>
+    
+          <div class="form-row">
+    
+            <div class="col-12 col-md-4 colmb-3">
+              <label for="plate">Plate</label>
+              <input
+                type="text"
+                class="form-control"
+                id="plate"
+                required
+              />
+              <div class="invalid-feedback">This field cannot be empty</div>
+            </div>
+    
+            <div class="col-12 col-md-4 mb-3">
+              <label for="brand">Brand</label>
+              <input
+                type="text"
+                class="form-control"
+                id="brand"
+                required
+              />
+              <div class="invalid-feedback">This field cannot be empty</div>
+            </div>
+
+            <div class="col-12 col-md-4 mb-3">
+              <label for="color">Color</label>
+              <input
+                type="text"
+                class="form-control"
+                id="color"
+                required
+              />
+              <div class="invalid-feedback">This field cannot be empty</div>
+            </div>
+
+          </div>
+    
+          <button id="btnCreate" class="btn btn-primary" type="button">Create Car</button>
+    
+        </form>
+        
+        <!-- Form SHOW CAR -->
+
+      </div>
+    
+    </div>
+    <script src="../models/car.js"></script>
+    <script src="../models/wheel.js"></script>
+    <script src="../controllers/controller.js"></script>
+
+    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
