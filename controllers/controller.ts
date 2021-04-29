@@ -151,7 +151,7 @@ function validate(e: Event) {
       }
     }
   )
-  
+
   form.classList.add("was-validated");
   if (isValid) {
     if (form.id === "formNewCar")
@@ -235,5 +235,3 @@ function runTestSuite() {
     testSuite.forEach(test => test())
   }
 }
-
-runTestSuite()

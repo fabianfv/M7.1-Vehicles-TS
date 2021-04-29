@@ -101,7 +101,6 @@ function addWheels() {
 /*************
   Validation
 **************/
-//function formIsValid(form: HTMLFormElement) {
 function validate(e) {
     var form = e.target;
     var inputs = form.querySelectorAll('input');
@@ -187,4 +186,3 @@ function runTestSuite() {
         testSuite.forEach(function (test) { return test(); });
     }
 }
-runTestSuite();
