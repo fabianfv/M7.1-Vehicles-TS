@@ -1,3 +1,4 @@
+"use strict";
 var Car = /** @class */ (function () {
     function Car(plate, color, brand) {
         this.wheels = new Array();

@@ -7,60 +7,234 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <title>Typescript Practice: Vehicles</title>
   </head>
-  <body>
+  <body class="user-select-none">
     <div class="container p-5 bg-light">
+
       <h1 class="text-center mb-5">Vehicles Exercise</h1>
 
-      <div class="row">
-    
-        <!-- Form NEW CAR -->
-        <form id="formNewCar" class="col-12 needs-validation" novalidate>
-    
-          <div class="form-row">
-    
-            <div class="col-12 col-md-4 colmb-3">
-              <label for="plate">Plate</label>
-              <input
-                type="text"
-                class="form-control"
-                id="plate"
-                required
-              />
-              <div class="invalid-feedback">This field cannot be empty</div>
-            </div>
-    
-            <div class="col-12 col-md-4 mb-3">
-              <label for="brand">Brand</label>
-              <input
-                type="text"
-                class="form-control"
-                id="brand"
-                required
-              />
-              <div class="invalid-feedback">This field cannot be empty</div>
-            </div>
-
-            <div class="col-12 col-md-4 mb-3">
-              <label for="color">Color</label>
-              <input
-                type="text"
-                class="form-control"
-                id="color"
-                required
-              />
-              <div class="invalid-feedback">This field cannot be empty</div>
-            </div>
-
-          </div>
-    
-          <button id="btnCreate" class="btn btn-primary" type="button">Create Car</button>
-    
-        </form>
-        
-        <!-- Form SHOW CAR -->
-
+      <div class="form-check mb-5 alert alert-warning py-4" role="alert">
+        <p class="px-1">Warning: this will delete all the cars you have entered </p>
+        <label class="form-check-label px-4">
+          <input type="checkbox" class="form-check-input" id="showTestCards" name="showTestCards"value="checkedValue"
+          >
+          Show test cards
+        </label>
       </div>
-    
+
+      <div class="row">
+        <!-- Form NEW CAR -->
+        <form id="formNewCar" method="get" class="needs-validation col-12" novalidate>
+          <div class="form-row mb-3">
+            <fieldset class="form-row border p-3 mb-3 flex-grow-1">
+              <legend class="w-auto px-2">Car</legend>
+
+              <div class="col-12 col-md-4 mb-3">
+                <div class="form-group">
+                  <label for="plate">Plate</label>
+                  <input
+                    type="text"
+                    class="form-control is-invalid"
+                    id="formNewCarPlate"
+                    required
+                    pattern="^\d{4}[a-zA-Z]{3}$"
+                  />
+                  <div class="invalid-feedback">This field cannot be empty</div>
+                  <div class="invalid-feedback">The license plate must be composed of 4 numbers followed by 3 letters</div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4 mb-3">
+                <label for="brand">Brand</label>
+                <input
+                  type="text"
+                  class="form-control is-invalid"
+                  id="formNewCarBrand"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+
+              <div class="col-12 col-md-4 mb-3">
+                <label for="color">Color</label>
+                <input
+                  type="text"
+                  class="form-control is-invalid"
+                  id="formNewCarColor"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button id="btnCreate" type="submit" class="btn btn-primary">Create Car</button>
+        </form>
+
+        <!-- Form ADD WHEELS -->
+        <form id="formAddWheels" method="get" class="col-12 needs-validation mt-3 d-none" novalidate>
+          <div class="form-row mb-3">
+            <fieldset class="form-row col-12 col-md-6 col-lg-3 border mr-0 mr-md-2 mr-lg-2 mb-3 py-3">
+              <legend class="w-auto px-2">Wheel 1</legend>
+              <div class="form-group px-3 w-100">
+                <label for="Brand">Brand</label>
+                <input type="text"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel01Brand"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+
+              <div class="form-group px-3 w-100">
+                <label for="Diameter">Diameter</label>
+                <input
+                  type="number"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel01Diameter"
+                  required
+                  min="0.4"
+                  max="2"
+                  step="0.001"
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+                <div class="invalid-feedback">The diameter cannot be less than 0.4 nor greater than 2</div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row col-12 col-md-6 col-lg-3 border mr-0 mr-lg-2 mb-3 py-3">
+              <legend class="w-auto px-2">Wheel 2</legend>
+              <div class="form-group px-3 w-100">
+                <label for="Brand">Brand</label>
+                <input
+                  type="text"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel02Brand"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+
+              <div class="form-group px-3 w-100">
+                <label for="Diameter">Diameter</label>
+                <input
+                  type="number"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel02Diameter"
+                  required
+                  min="0.4"
+                  max="2"
+                  step="0.001"
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+                <div class="invalid-feedback">The diameter cannot be less than 0.4 nor greater than 2</div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row col-12 col-md-6 col-lg-3 border mr-0 mr-md-2 mr-lg-2 mb-3 py-3">
+              <legend class="w-auto px-2">Wheel 3</legend>
+              <div class="form-group px-3 w-100">
+                <label for="Brand">Brand</label>
+                <input
+                  type="text"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel03Brand"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+
+              <div class="form-group px-3 w-100">
+                <label for="Diameter">Diameter</label>
+                <input
+                  type="number"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel03Diameter"
+                  required
+                  min="0.4"
+                  max="2"
+                  step="0.001"
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+                <div class="invalid-feedback">The diameter cannot be less than 0.4 nor greater than 2</div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-row col-12 col-md-6 col-lg-3 border mb-3 py-3">
+              <legend class="w-auto px-2">Wheel 4</legend>
+              <div class="form-group px-3 w-100">
+                <label for="Brand">Brand</label>
+                <input
+                  type="text"
+                  class="form-control is-invalid" id="formAddWheelWheel04Brand"
+                  required
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+              </div>
+
+              <div class="form-group px-3 w-100">
+                <label for="Diameter">Diameter</label>
+                <input
+                  type="number"
+                  class="form-control is-invalid"
+                  id="formAddWheelWheel04Diameter"
+                  required
+                  min="0.4"
+                  max="2"
+                  step="0.001"
+                />
+                <div class="invalid-feedback">This field cannot be empty</div>
+                <div class="invalid-feedback">The diameter cannot be less than 0.4 nor greater than 2</div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="row col-12">
+            <button id="btnAddWheels" class="btn btn-primary" type="submit">Add Wheels</button>
+          </div>
+        </form>
+
+        <!-- SHOW CARS TEMPLATE -->
+        <template id="car">
+          <div class="card mt-5 mx-1 w-20">
+            <div class="card-header">
+              <h5 class="text-center">Plate - Brand - Color</h5>
+            </div>
+            <div class="card-body">
+              <h4 id="showCarPlate" class="text-center text-uppercase">1234QWE</h4>
+              <h4 id="showCarBrand" class="text-center text-capitalize">Ford</h4>
+              <h4 id="showCarColor" class="text-center text-capitalize">Blue</h4>
+            </div>
+            <div class="card">
+              <div class="card-header text-center">Wheels brand and diameter</div>
+              <div class="card-body pb-0">
+                <div class="row">
+                  <ul class="list-group list-group-flush col">
+                    <li class="list-group-item">
+                      <p class="text-center" id="templateWheel01Brand">Brand</p>
+                      <p class="text-center" id="templateWheel01Diameter">Diameter</p>
+                    </li>
+                    <li class="list-group-item">
+                      <p class="text-center" id="templateWheel02Brand">Brand</p>
+                      <p class="text-center" id="templateWheel02Diameter">Diameter</p>
+                    </li>
+                  </ul>
+                  <ul class="list-group list-group-flush col">
+                    <li class="list-group-item">
+                      <p class="text-center" id="templateWheel03Brand">Brand</p>
+                      <p class="text-center" id="templateWheel03Diameter">Diameter</p>
+                    </li>
+                    <li class="list-group-item">
+                      <p class="text-center" id="templateWheel04Brand">Brand</p>
+                      <p class="text-center" id="templateWheel04Diameter">Diameter</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <div id="root" class="d-flex justify-content-center flex-wrap"></div>
+      </div>
     </div>
     <script src="../models/car.js"></script>
     <script src="../models/wheel.js"></script>

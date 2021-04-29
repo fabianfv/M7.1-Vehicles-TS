@@ -10,9 +10,9 @@ This project is a simple Typescript practice.
 	
 ## Technologies
 Project was created with:
-* Node version: 14.16.0
+* Node version: 14.16.1
 * NPM version: 6.14.9
-* tsc version: 4.2.3
+* tsc version: 4.2.4
 	
 ## Setup
 You can get this project from GitHub:
@@ -25,7 +25,12 @@ You can restore the development environment by doing:
 $ cd Vehicles-TS/
 $ npm install
 ``` 
-You can transpile TS code to JS code by doing:
+You can transpile TS code to JS in watch mode by doing:
 ``` 
-$ npm run build
+$ npm run tsc-watch
 ``` 
+
+You can transpile TS code to JS manually by doing:
+```
+$ npm run tsc
+```
